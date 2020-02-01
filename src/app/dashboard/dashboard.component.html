@@ -1,0 +1,39 @@
+
+
+<button class="btn btn-success" (click)="myProfileLoad()">My Profile</button>
+
+<div class="pet-details">
+<div> 
+    <button class="btn btn-primary" (click)="sellPet()" >{{addPet ? 'Add Pet to Sell' : 'Go Back'}}</button>
+</div>
+<app-my-profile *ngIf="myProfile"></app-my-profile>
+<div  *ngIf="addPet && !myProfile">
+    
+<table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Breed Name</th>
+            <th scope="col">Breed Image</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Dog</td>
+            <td><img height="200px" width="200px" [src]="imagePath"></td>
+            <td><button class="btn btn-success">Buy</button></td>
+          </tr>
+          
+        </tbody>
+      </table>
+</div>
+<div  *ngIf="!addPet">
+        <form>
+            Bread Name : <input  ngModel="breedName"  type="text"/>
+            Bread Image Url : <input  ngModel="breedUrl" type="text">
+            <button type="submit">Click to Sell</button>
+        </form>
+</div>
+</div>
