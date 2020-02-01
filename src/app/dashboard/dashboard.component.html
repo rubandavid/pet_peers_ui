@@ -31,9 +31,9 @@
 </div>
 <div  *ngIf="!addPet">
         <form>
-            Bread Name : <input  ngModel="breedName"  type="text"/>
-            Bread Image Url : <input  ngModel="breedUrl" type="text">
-            <button type="submit">Click to Sell</button>
+            Bread Name : <input  name="breedName" [(ngModel)]="breedName"  type="text"/>
+            Bread Image Url : <input  name="breedUrl" [(ngModel)]="breedUrl" type="text">
+            <button type="submit" (click)="sellMyPet()">Click to Sell</button>
         </form>
 </div>
 </div>

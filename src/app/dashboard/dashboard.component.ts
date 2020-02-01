@@ -22,19 +22,22 @@ export class DashboardComponent implements OnInit {
   sellPet(){
     this.addPet = !this.addPet;
     this.myProfile = false;
-    this.http.post('localhost:8080/sale_pet',{
-      breedname : this.breedName,
-      breadUrl : this.breedUrl
-    },{}).subscribe(
-      data=>{
-          console.log(data);
-      }
-    );
+    // this.http.post('localhost:8080/sale_pet',{
+    //   breedname : this.breedName,
+    //   breadUrl : this.breedUrl
+    // },{}).subscribe(
+    //   data=>{
+    //       console.log(data);
+    //   }
+    // );
 
   }
 
   myProfileLoad(){
     this.myProfile= !this.myProfile;
   
+  }
+  sellMyPet(){
+    
   }
 }

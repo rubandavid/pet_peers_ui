@@ -2,9 +2,9 @@
 
 <form (ngSubmit)="login()">
     
-User name : <input class="form-control" type="text" name="username"/>
+User name : <input class="form-control" [(ngModel)]="name" type="text" name="name"/>
 <br>
-Password  : <input class="form-control" type="password"/>
+Password  : <input class="form-control" [(ngModel)]="password" name="passw" type="password"/>
 
 <br>
 <button type="submit" class="btn btn-primary">Login</button>

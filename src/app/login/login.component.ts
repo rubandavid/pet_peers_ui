@@ -12,6 +12,8 @@ export class LoginComponent implements OnInit {
   constructor(  private http: HttpClient,private routes:Router) { }
 
   loginFlag:boolean = false;
+  name:string = '';
+  password:string = '';
   imagePath:string = 'https://cdn2-www.dogtime.com/assets/uploads/2011/03/puppy-development.jpg';
   ngOnInit() {
   }
@@ -20,14 +22,13 @@ export class LoginComponent implements OnInit {
   login(){
     console.log('called');
 
-      this.http.get<string>("http://localhost:8080/test",{responseType: 'text'}).subscribe(
+      this.http.get("http://localhost:8080/login?"+'name='+this.name+'&password='+this.password,{responseType: 'text'}).subscribe(
       data=>{
-       // console.log('Sucess');
         this.loginFlag = true;
-       if(data == 'Success'){
+        if(data == 'Success'){
         this.routes.navigate(['/dashboard']);
-       }else{
-         alert('Wrong Input');
+        }else{
+        alert('Wrong Username and password');
        }
       }
       );
